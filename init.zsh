@@ -16,7 +16,21 @@ p6df::modules::launchdarkly::deps() {
 ######################################################################
 #<
 #
-# Function: p6df::modules::python::init(_module, dir)
+# Function: p6df::modules::launchdarkly::vscodes()
+#
+#>
+######################################################################
+p6df::modules::launchdarkly::vscodes() {
+
+         code --install-extension LaunchDarklyOfficial.launchdarkly
+
+         p6_return_void
+}
+
+######################################################################
+#<
+#
+# Function: p6df::modules::launchdarkly::init(_module, dir)
 #
 #  Args:
 #	_module -

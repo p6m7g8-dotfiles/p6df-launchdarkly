@@ -1,18 +1,18 @@
 ######################################################################
 #<
 #
-# Function: stream  = p6df::modules::launchdarkly::auditlog::for(flag, [project=$P6_LD_PROJECTt], [env=$P6_LD_ENV], [api_token=$LAUNCH_DARKLY_API_TOKEN])
+# Function: stream  = p6df::modules::launchdarkly::auditlog::for(flag, [project=$P6_LD_PROJECT], [env=$P6_LD_ENV], [api_key=$LAUNCHDARKLY_API_KEY])
 #
 #  Args:
 #	flag -
-#	OPTIONAL project - [$P6_LD_PROJECTt]
+#	OPTIONAL project - [$P6_LD_PROJECT]
 #	OPTIONAL env - [$P6_LD_ENV]
-#	OPTIONAL api_token - [$LAUNCH_DARKLY_API_TOKEN]
+#	OPTIONAL api_key - [$LAUNCHDARKLY_API_KEY]
 #
 #  Returns:
 #	stream - 
 #
-#  Environment:	 LAUNCH_DARKLY_API_TOKEN P6_LD_ENV P6_LD_PROJECT
+#  Environment:	 LAUNCHDARKLY_API_KEY P6_LD_ENV P6_LD_PROJECT
 #>
 ######################################################################
 p6df::modules::launchdarkly::auditlog::for() {
@@ -29,13 +29,13 @@ p6df::modules::launchdarkly::auditlog::for() {
 ######################################################################
 #<
 #
-# Function: stream  = p6_launch_darkly_auditlog_for(flag, project, env, api_token)
+# Function: stream  = p6_launchdarkly_auditlog_for(flag, project, env, api_key)
 #
 #  Args:
 #	flag -
 #	project -
 #	env -
-#	api_token -
+#	api_key -
 #
 #  Returns:
 #	stream - 
