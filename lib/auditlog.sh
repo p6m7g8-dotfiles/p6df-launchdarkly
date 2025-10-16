@@ -40,7 +40,6 @@ p6df::modules::launchdarkly::auditlog::for() {
 #  Returns:
 #	stream - 
 #
-#  Environment:	 MPOSIX
 #>
 ######################################################################
 p6_launchdarkly_auditlog_for() {
