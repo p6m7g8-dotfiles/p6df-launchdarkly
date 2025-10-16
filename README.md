@@ -44,10 +44,10 @@
 
 ```text
 .
-├── README.md
 ├── init.zsh
-└── lib
-    └── auditlog.sh
+├── lib
+│   └── auditlog.sh
+└── README.md
 
 2 directories, 3 files
 ```
