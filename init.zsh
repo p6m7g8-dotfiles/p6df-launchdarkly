@@ -60,7 +60,7 @@ p6df::modules::launchdarkly::prompt::mod() {
   local str
   if ! p6_string_blank "$P6_DFZ_PROFILE_LAUNCHDARKLY"; then
     str="launchdarkly:\t  $P6_DFZ_PROFILE_LAUNCHDARKLY:"
-    if ! p6_string_blank "P6_LD_PROJECT"; then
+    if ! p6_string_blank "$P6_LD_PROJECT"; then
       str=$(p6_string_append "$str" "$P6_LD_PROJECT" " ")
     fi
     if ! p6_string_blank "$P6_LD_ENV"; then
