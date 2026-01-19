@@ -7,10 +7,7 @@
 #>
 ######################################################################
 p6df::modules::launchdarkly::deps() {
-  ModuleDeps=(
-	  p6m7g8-dotfiles/p6df-ruby
-	  p6m7g8-dotfiles/p6df-python
-  )
+  ModuleDeps=()
 }
 
 ######################################################################
@@ -50,22 +47,31 @@ p6df::modules::launchdarkly::init () {
 ######################################################################
 #<
 #
-# Function: str str = p6df::modules::launchdarkly::prompt::line()
+# Function: str str = p6df::modules::launchdarkly::prompt::mod()
 #
 #  Returns:
 #	str - str
 #
-#  Environment:	 LAUNCHDARKLY_API_KEY LAUNCHDARKLY_SDK_KEY P6_LD_PROJECT
+#  Environment:	 LAUNCHDARKLY_API_KEY LAUNCHDARKLY_SDK_KEY P6_DFZ_PROFILE_LAUNCHDARKLY P6_LD_ENV P6_LD_PROJECT
 #>
 ######################################################################
-p6df::modules::launchdarkly::prompt::line() {
+p6df::modules::launchdarkly::prompt::mod() {
 
-  local str="launchdarkly:     $P6_LD_PROJECT/$P6_LD_ENV"
-  if ! p6_string_blank "$LAUNCHDARKLY_API_KEY"; then
-    str="$str [api]"
-  fi
-  if ! p6_string_blank "$LAUNCHDARKLY_SDK_KEY"; then
-    str="$str [sdk]"
+  local str
+  if ! p6_string_blank "$P6_DFZ_PROFILE_LAUNCHDARKLY"; then
+    str="launchdarkly:\t  $P6_DFZ_PROFILE_LAUNCHDARKLY:"
+    if ! p6_string_blank "P6_LD_PROJECT"; then
+      str=$(p6_string_append "$str" "$P6_LD_PROJECT" " ")
+    fi
+    if ! p6_string_blank "$P6_LD_ENV"; then
+      str=$(p6_string_append "$str" "$P6_LD_ENV" "/")
+    fi
+    if ! p6_string_blank "$LAUNCHDARKLY_API_KEY"; then
+      str=$(p6_string_append "$str" "api" "/")
+    fi
+    if ! p6_string_blank "$LAUNCHDARKLY_SDK_KEY"; then
+      str=$(p6_string_append "$str" "sdk" "/")
+    fi
   fi
 
   p6_return_str "$str"
