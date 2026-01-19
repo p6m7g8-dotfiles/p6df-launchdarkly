@@ -5,8 +5,6 @@
 ## Badges
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-yellowgreen.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Mergify](https://img.shields.io/endpoint.svg?url=https://gh.mergify.io/badges//p6df-launchdarkly/&style=flat)](https://mergify.io)
-[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](<https://gitpod.io/#https://github.com//p6df-launchdarkly>)
 
 ## Summary
 
@@ -31,7 +29,7 @@
 - p6df::modules::launchdarkly::deps()
 - p6df::modules::launchdarkly::init(_module, dir)
 - p6df::modules::launchdarkly::vscodes()
-- str str = p6df::modules::launchdarkly::prompt::line()
+- str str = p6df::modules::launchdarkly::prompt::mod()
 
 ## p6df-launchdarkly/lib
 
