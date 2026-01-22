@@ -37,6 +37,8 @@ TODO: Add a short summary of this module.
 
 - `p6df::modules::launchdarkly::deps()`
 - `p6df::modules::launchdarkly::init(_module, dir)`
+- `p6df::modules::launchdarkly::profile::off()`
+- `p6df::modules::launchdarkly::profile::on(profile, [project=], [env=], [api_key=], [sdk_key=])`
 - `p6df::modules::launchdarkly::vscodes()`
 - `str str = p6df::modules::launchdarkly::prompt::mod()`
 
