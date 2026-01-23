@@ -59,8 +59,8 @@ p6df::modules::launchdarkly::prompt::mod() {
 
   local str
   if ! p6_string_blank "$P6_DFZ_PROFILE_LAUNCHDARKLY"; then
-    str="launchdarkly:\t  $P6_DFZ_PROFILE_LAUNCHDARKLY:"
     if ! p6_string_blank "$P6_LD_PROJECT"; then
+      str="launchdarkly:\t  $P6_DFZ_PROFILE_LAUNCHDARKLY:"
       str=$(p6_string_append "$str" "$P6_LD_PROJECT" " ")
     fi
     if ! p6_string_blank "$P6_LD_ENV"; then
@@ -75,4 +75,54 @@ p6df::modules::launchdarkly::prompt::mod() {
   fi
 
   p6_return_str "$str"
+}
+
+######################################################################
+#<
+#
+# Function: p6df::modules::launchdarkly::profile::on(profile, [project=], [env=], [api_key=], [sdk_key=])
+#
+#  Args:
+#	profile -
+#	OPTIONAL project - []
+#	OPTIONAL env - []
+#	OPTIONAL api_key - []
+#	OPTIONAL sdk_key - []
+#
+#  Environment:	 LAUNCHDARKLY_API_KEY LAUNCHDARKLY_SDK_KEY P6_DFZ_PROFILE_LAUNCHDARKLY P6_LD_ENV P6_LD_PROJECT
+#>
+######################################################################
+p6df::modules::launchdarkly::profile::on() {
+  local profile="$1"
+  local project="$2"
+  local env="$3"
+  local api_key="${4:-}"
+  local sdk_key="${5:-}"
+
+  p6_env_export "P6_DFZ_PROFILE_LAUNCHDARKLY" "$profile"
+  p6_env_export "P6_LD_PROJECT" "$project"
+  p6_env_export "P6_LD_ENV" "$env"
+  p6_env_export "LAUNCHDARKLY_API_KEY" "$api_key"
+  p6_env_export "LAUNCHDARKLY_SDK_KEY" "$sdk_key"
+
+  p6_return_void
+}
+
+######################################################################
+#<
+#
+# Function: p6df::modules::launchdarkly::profile::off()
+#
+#  Environment:	 LAUNCHDARKLY_API_KEY LAUNCHDARKLY_SDK_KEY P6_DFZ_PROFILE_LAUNCHDARKLY P6_LD_ENV P6_LD_PROJECT
+#>
+######################################################################
+p6df::modules::launchdarkly::profile::off() {
+
+  p6_env_export_un P6_DFZ_PROFILE_LAUNCHDARKLY
+  p6_env_export_un P6_LD_PROJECT
+  p6_env_export_un P6_LD_ENV
+  p6_env_export_un LAUNCHDARKLY_API_KEY
+  p6_env_export_un LAUNCHDARKLY_SDK_KEY
+
+  p6_return_void
 }
