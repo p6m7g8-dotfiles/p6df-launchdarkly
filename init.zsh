@@ -80,12 +80,12 @@ p6df::modules::launchdarkly::prompt::mod() {
 ######################################################################
 #<
 #
-# Function: p6df::modules::launchdarkly::profile::on(profile, [project=], [env=], [api_key=], [sdk_key=])
+# Function: p6df::modules::launchdarkly::profile::on(profile, project, env, [api_key=], [sdk_key=])
 #
 #  Args:
 #	profile -
-#	OPTIONAL project - []
-#	OPTIONAL env - []
+#	project -
+#	env -
 #	OPTIONAL api_key - []
 #	OPTIONAL sdk_key - []
 #
