@@ -94,16 +94,11 @@ p6df::modules::launchdarkly::prompt::mod() {
 ######################################################################
 p6df::modules::launchdarkly::profile::on() {
   local profile="$1"
-  local project="$2"
-  local env="$3"
-  local api_key="${4:-}"
-  local sdk_key="${5:-}"
+  local env="$2"
+
+  p6_run_code "$env"
 
   p6_env_export "P6_DFZ_PROFILE_LAUNCHDARKLY" "$profile"
-  p6_env_export "P6_LD_PROJECT" "$project"
-  p6_env_export "P6_LD_ENV" "$env"
-  p6_env_export "LAUNCHDARKLY_API_KEY" "$api_key"
-  p6_env_export "LAUNCHDARKLY_SDK_KEY" "$sdk_key"
 
   p6_return_void
 }
