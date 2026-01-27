@@ -19,7 +19,7 @@ p6df::modules::launchdarkly::deps() {
 ######################################################################
 p6df::modules::launchdarkly::vscodes() {
 
-         code --install-extension LaunchDarklyOfficial.launchdarkly
+         p6df::modules::vscode::extension::install LaunchDarklyOfficial.launchdarkly
 
          p6_return_void
 }
