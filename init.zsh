@@ -58,18 +58,18 @@ p6df::modules::launchdarkly::init () {
 p6df::modules::launchdarkly::prompt::mod() {
 
   local str
-  if ! p6_string_blank "$P6_DFZ_PROFILE_LAUNCHDARKLY"; then
-    if ! p6_string_blank "$P6_LD_PROJECT"; then
+  if p6_string_blank_NOT "$P6_DFZ_PROFILE_LAUNCHDARKLY"; then
+    if p6_string_blank_NOT "$P6_LD_PROJECT"; then
       str="launchdarkly:\t  $P6_DFZ_PROFILE_LAUNCHDARKLY:"
       str=$(p6_string_append "$str" "$P6_LD_PROJECT" " ")
     fi
-    if ! p6_string_blank "$P6_LD_ENV"; then
+    if p6_string_blank_NOT "$P6_LD_ENV"; then
       str=$(p6_string_append "$str" "$P6_LD_ENV" "/")
     fi
-    if ! p6_string_blank "$LAUNCHDARKLY_API_KEY"; then
+    if p6_string_blank_NOT "$LAUNCHDARKLY_API_KEY"; then
       str=$(p6_string_append "$str" "api" "/")
     fi
-    if ! p6_string_blank "$LAUNCHDARKLY_SDK_KEY"; then
+    if p6_string_blank_NOT "$LAUNCHDARKLY_SDK_KEY"; then
       str=$(p6_string_append "$str" "sdk" "/")
     fi
   fi
