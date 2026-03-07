@@ -57,9 +57,9 @@ Configure LaunchDarkly profile state for shell usage and install the official `l
 - `LAUNCHDARKLY_API_KEY`
 - `LAUNCHDARKLY_SDK_KEY`
 
-#### p6df-launchdarkly/lib
+### p6df-launchdarkly/lib
 
-##### p6df-launchdarkly/lib/auditlog.sh
+#### p6df-launchdarkly/lib/auditlog.sh
 
 - `stream  = p6_launchdarkly_auditlog_for(flag, project, env, api_key)`
   - Args:
