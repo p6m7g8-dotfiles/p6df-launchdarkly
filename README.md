@@ -39,17 +39,17 @@ Configure LaunchDarkly profile state for shell usage and install the official `l
 - `p6df::modules::launchdarkly::external::brew()`
 - `p6df::modules::launchdarkly::init(_module, dir)`
   - Args:
-    - _module - 
-    - dir - 
+    - _module -
+    - dir -
 - `p6df::modules::launchdarkly::profile::off()`
 - `p6df::modules::launchdarkly::profile::on(profile, env)`
   - Args:
-    - profile - 
-    - env - 
+    - profile -
+    - env -
 - `p6df::modules::launchdarkly::vscodes()`
 - `str str = p6df::modules::launchdarkly::prompt::mod()`
 
-## ENV
+### ENV
 
 - `P6_DFZ_PROFILE_LAUNCHDARKLY`
 - `P6_LD_PROJECT`
@@ -63,13 +63,13 @@ Configure LaunchDarkly profile state for shell usage and install the official `l
 
 - `stream  = p6_launchdarkly_auditlog_for(flag, project, env, api_key)`
   - Args:
-    - flag - 
-    - project - 
-    - env - 
-    - api_key - 
-- `stream  = p6df::modules::launchdarkly::auditlog::for(flag, [project=$P6_LD_PROJECT], [env=$P6_LD_ENV], [api_key=$LAUNCHDARKLY_API_KEY])`
+    - flag -
+    - project -
+    - env -
+    - api_key -
+- `stream  = p6df::modules::launchdarkly::auditlog::for(flag, [project], [env], [api_key])`
   - Args:
-    - flag - 
+    - flag -
     - OPTIONAL project - [$P6_LD_PROJECT]
     - OPTIONAL env - [$P6_LD_ENV]
     - OPTIONAL api_key - [$LAUNCHDARKLY_API_KEY]
