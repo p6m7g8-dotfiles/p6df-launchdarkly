@@ -95,6 +95,20 @@ p6df::modules::launchdarkly::prompt::mod() {
 ######################################################################
 #<
 #
+# Function: p6df::modules::launchdarkly::mcp()
+#
+#>
+######################################################################
+p6df::modules::launchdarkly::mcp() {
+
+  p6_js_npm_global_install "@launchdarkly/mcp-server"
+
+  p6_return_void
+}
+
+######################################################################
+#<
+#
 # Function: p6df::modules::launchdarkly::profile::on(profile, env)
 #
 #  Args:
