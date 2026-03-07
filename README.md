@@ -8,6 +8,7 @@
 - [Code of Conduct](#code-of-conduct)
 - [Usage](#usage)
   - [Functions](#functions)
+- [ENV](#env)
 - [Hierarchy](#hierarchy)
 - [Author](#author)
 
@@ -17,7 +18,7 @@
 
 ## Summary
 
-TODO: Add a short summary of this module.
+Configure LaunchDarkly profile state for shell usage and install the official `ldcli`.
 
 ## Contributing
 
@@ -36,34 +37,43 @@ TODO: Add a short summary of this module.
 ##### p6df-launchdarkly/init.zsh
 
 - `p6df::modules::launchdarkly::deps()`
+- `p6df::modules::launchdarkly::external::brew()`
 - `p6df::modules::launchdarkly::init(_module, dir)`
   - Args:
-    - _module - 
-    - dir - 
+    - _module -
+    - dir -
 - `p6df::modules::launchdarkly::profile::off()`
 - `p6df::modules::launchdarkly::profile::on(profile, env)`
   - Args:
-    - profile - 
-    - env - 
+    - profile -
+    - env -
 - `p6df::modules::launchdarkly::vscodes()`
 - `str str = p6df::modules::launchdarkly::prompt::mod()`
 
-#### p6df-launchdarkly/lib
+### p6df-launchdarkly/lib
 
-##### p6df-launchdarkly/lib/auditlog.sh
+#### p6df-launchdarkly/lib/auditlog.sh
 
 - `stream  = p6_launchdarkly_auditlog_for(flag, project, env, api_key)`
   - Args:
-    - flag - 
-    - project - 
-    - env - 
-    - api_key - 
-- `stream  = p6df::modules::launchdarkly::auditlog::for(flag, [project=$P6_LD_PROJECT], [env=$P6_LD_ENV], [api_key=$LAUNCHDARKLY_API_KEY])`
+    - flag -
+    - project -
+    - env -
+    - api_key -
+- `stream  = p6df::modules::launchdarkly::auditlog::for(flag, [project], [env], [api_key])`
   - Args:
-    - flag - 
+    - flag -
     - OPTIONAL project - [$P6_LD_PROJECT]
     - OPTIONAL env - [$P6_LD_ENV]
     - OPTIONAL api_key - [$LAUNCHDARKLY_API_KEY]
+
+## ENV
+
+- `P6_DFZ_PROFILE_LAUNCHDARKLY`
+- `P6_LD_PROJECT`
+- `P6_LD_ENV`
+- `LAUNCHDARKLY_API_KEY`
+- `LAUNCHDARKLY_SDK_KEY`
 
 ## Hierarchy
 
