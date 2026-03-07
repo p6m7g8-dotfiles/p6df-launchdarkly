@@ -17,7 +17,7 @@
 
 ## Summary
 
-TODO: Add a short summary of this module.
+Configure LaunchDarkly profile state for shell usage and install the official `ldcli`.
 
 ## Contributing
 
@@ -36,6 +36,7 @@ TODO: Add a short summary of this module.
 ##### p6df-launchdarkly/init.zsh
 
 - `p6df::modules::launchdarkly::deps()`
+- `p6df::modules::launchdarkly::external::brew()`
 - `p6df::modules::launchdarkly::init(_module, dir)`
   - Args:
     - _module - 
@@ -47,6 +48,14 @@ TODO: Add a short summary of this module.
     - env - 
 - `p6df::modules::launchdarkly::vscodes()`
 - `str str = p6df::modules::launchdarkly::prompt::mod()`
+
+## ENV
+
+- `P6_DFZ_PROFILE_LAUNCHDARKLY`
+- `P6_LD_PROJECT`
+- `P6_LD_ENV`
+- `LAUNCHDARKLY_API_KEY`
+- `LAUNCHDARKLY_SDK_KEY`
 
 #### p6df-launchdarkly/lib
 
