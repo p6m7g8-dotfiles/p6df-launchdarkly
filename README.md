@@ -8,6 +8,7 @@
 - [Code of Conduct](#code-of-conduct)
 - [Usage](#usage)
   - [Functions](#functions)
+- [ENV](#env)
 - [Hierarchy](#hierarchy)
 - [Author](#author)
 
@@ -49,14 +50,6 @@ Configure LaunchDarkly profile state for shell usage and install the official `l
 - `p6df::modules::launchdarkly::vscodes()`
 - `str str = p6df::modules::launchdarkly::prompt::mod()`
 
-### ENV
-
-- `P6_DFZ_PROFILE_LAUNCHDARKLY`
-- `P6_LD_PROJECT`
-- `P6_LD_ENV`
-- `LAUNCHDARKLY_API_KEY`
-- `LAUNCHDARKLY_SDK_KEY`
-
 ### p6df-launchdarkly/lib
 
 #### p6df-launchdarkly/lib/auditlog.sh
@@ -73,6 +66,14 @@ Configure LaunchDarkly profile state for shell usage and install the official `l
     - OPTIONAL project - [$P6_LD_PROJECT]
     - OPTIONAL env - [$P6_LD_ENV]
     - OPTIONAL api_key - [$LAUNCHDARKLY_API_KEY]
+
+## ENV
+
+- `P6_DFZ_PROFILE_LAUNCHDARKLY`
+- `P6_LD_PROJECT`
+- `P6_LD_ENV`
+- `LAUNCHDARKLY_API_KEY`
+- `LAUNCHDARKLY_SDK_KEY`
 
 ## Hierarchy
 
