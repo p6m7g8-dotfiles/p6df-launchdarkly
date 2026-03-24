@@ -19,8 +19,8 @@ p6df::modules::launchdarkly::deps() {
 ######################################################################
 p6df::modules::launchdarkly::external::brew() {
 
-  brew tap launchdarkly/homebrew-tap
-  brew install ldcli
+  p6df::core::homebrew::cmd::brew tap launchdarkly/homebrew-tap
+  p6df::core::homebrew::cmd::brew install ldcli
 
   p6_return_void
 }
