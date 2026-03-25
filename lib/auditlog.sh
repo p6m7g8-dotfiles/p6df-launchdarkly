@@ -49,10 +49,10 @@ p6_launchdarkly_auditlog_for() {
   local env="$3"
   local api_key="$4"
 
-  curl -s \
+  p6_curl -s \
 	--location "https://app.launchdarkly.com/api/v2/auditlog?spec=proj%2F{$project}%3Aenv%2F${env}%3Aflag/${flag}"  \
 	--header "authorization: $api_key" | \
-	jq -r '.items[] | "\(.date)\t\(.title)"' | \
+	p6_json_eval -r '.items[] | "\(.date)\t\(.title)"' | \
 	p6_filter_translate_ms_epoch_to_iso8601_local
 
   p6_return_stream
