@@ -109,20 +109,20 @@ p6df::modules::launchdarkly::mcp() {
 ######################################################################
 #<
 #
-# Function: p6df::modules::launchdarkly::profile::on(profile, env)
+# Function: p6df::modules::launchdarkly::profile::on(profile, code)
 #
 #  Args:
 #	profile -
-#	env -
+#	code -
 #
 #  Environment:	 P6_DFZ_PROFILE_LAUNCHDARKLY
 #>
 ######################################################################
 p6df::modules::launchdarkly::profile::on() {
   local profile="$1"
-  local env="$2"
+  local code="$2"
 
-  p6_run_code "$env"
+  p6_run_code "$code"
 
   p6_env_export "P6_DFZ_PROFILE_LAUNCHDARKLY" "$profile"
 
