@@ -13,11 +13,11 @@ p6df::modules::launchdarkly::deps() {
 ######################################################################
 #<
 #
-# Function: p6df::modules::launchdarkly::external::brew()
+# Function: p6df::modules::launchdarkly::external::brews()
 #
 #>
 ######################################################################
-p6df::modules::launchdarkly::external::brew() {
+p6df::modules::launchdarkly::external::brews() {
 
   p6df::core::homebrew::cmd::brew tap launchdarkly/homebrew-tap
   p6df::core::homebrew::cmd::brew install ldcli
