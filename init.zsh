@@ -103,26 +103,29 @@ p6df::modules::launchdarkly::mcp() {
 
   p6_js_npm_global_install "@launchdarkly/mcp-server"
 
+  p6df::modules::anthropic::mcp::server::add "launchdarkly" "npx" "-y" "@launchdarkly/mcp-server"
+  p6df::modules::openai::mcp::server::add "launchdarkly" "npx" "-y" "@launchdarkly/mcp-server"
+
   p6_return_void
 }
 
 ######################################################################
 #<
 #
-# Function: p6df::modules::launchdarkly::profile::on(profile, env)
+# Function: p6df::modules::launchdarkly::profile::on(profile, code)
 #
 #  Args:
 #	profile -
-#	env -
+#	code -
 #
 #  Environment:	 P6_DFZ_PROFILE_LAUNCHDARKLY
 #>
 ######################################################################
 p6df::modules::launchdarkly::profile::on() {
   local profile="$1"
-  local env="$2"
+  local code="$2"
 
-  p6_run_code "$env"
+  p6_run_code "$code"
 
   p6_env_export "P6_DFZ_PROFILE_LAUNCHDARKLY" "$profile"
 
@@ -132,18 +135,19 @@ p6df::modules::launchdarkly::profile::on() {
 ######################################################################
 #<
 #
-# Function: p6df::modules::launchdarkly::profile::off()
+# Function: p6df::modules::launchdarkly::profile::off(code)
+#
+#  Args:
+#	code - shell code block previously passed to profile::on
 #
 #  Environment:	 LAUNCHDARKLY_API_KEY LAUNCHDARKLY_SDK_KEY P6_DFZ_PROFILE_LAUNCHDARKLY P6_LD_ENV P6_LD_PROJECT
 #>
 ######################################################################
 p6df::modules::launchdarkly::profile::off() {
+  local code="$1"
 
+  p6_env_unset_from_code "$code"
   p6_env_export_un P6_DFZ_PROFILE_LAUNCHDARKLY
-  p6_env_export_un P6_LD_PROJECT
-  p6_env_export_un P6_LD_ENV
-  p6_env_export_un LAUNCHDARKLY_API_KEY
-  p6_env_export_un LAUNCHDARKLY_SDK_KEY
 
   p6_return_void
 }
