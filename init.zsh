@@ -1,9 +1,21 @@
 # shellcheck shell=bash
 ######################################################################
+#<
+#
+# Function: p6df::modules::launchdarkly::deps()
+#
+#>
+######################################################################
 p6df::modules::launchdarkly::deps() {
   ModuleDeps=(p6m7g8-dotfiles/p6common)
 }
 
+######################################################################
+#<
+#
+# Function: p6df::modules::launchdarkly::external::brews()
+#
+#>
 ######################################################################
 p6df::modules::launchdarkly::external::brews() {
 
@@ -13,6 +25,12 @@ p6df::modules::launchdarkly::external::brews() {
   p6_return_void
 }
 
+######################################################################
+#<
+#
+# Function: p6df::modules::launchdarkly::mcp()
+#
+#>
 ######################################################################
 p6df::modules::launchdarkly::mcp() {
 
@@ -25,6 +43,12 @@ p6df::modules::launchdarkly::mcp() {
 }
 
 ######################################################################
+#<
+#
+# Function: p6df::modules::launchdarkly::vscodes()
+#
+#>
+######################################################################
 p6df::modules::launchdarkly::vscodes() {
 
          p6df::modules::vscode::extension::install LaunchDarklyOfficial.launchdarkly
@@ -32,6 +56,16 @@ p6df::modules::launchdarkly::vscodes() {
          p6_return_void
 }
 
+######################################################################
+#<
+#
+# Function: words launchdarkly $LAUNCHDARKLY_API_KEY = p6df::modules::launchdarkly::profile::mod()
+#
+#  Returns:
+#	words - launchdarkly $LAUNCHDARKLY_API_KEY
+#
+#  Environment:	 LAUNCHDARKLY_API_KEY
+#>
 ######################################################################
 p6df::modules::launchdarkly::profile::mod() {
 
@@ -51,37 +85,3 @@ p6df::modules::launchdarkly::profile::mod() {
 
   p6_return_str "$str"
 }
-######################################################################
-#<
-#
-# Function: p6df::modules::launchdarkly::deps()
-#
-#>
-######################################################################
-#<
-#
-# Function: p6df::modules::launchdarkly::external::brews()
-#
-#>
-######################################################################
-#<
-#
-# Function: p6df::modules::launchdarkly::vscodes()
-#
-#>
-######################################################################
-#<
-#
-# Function: p6df::modules::launchdarkly::mcp()
-#
-#>
-######################################################################
-#<
-#
-# Function: words launchdarkly $LAUNCHDARKLY_API_KEY = p6df::modules::launchdarkly::profile::mod()
-#
-#  Returns:
-#	words - launchdarkly $LAUNCHDARKLY_API_KEY
-#
-#  Environment:	 LAUNCHDARKLY_API_KEY
-#>
