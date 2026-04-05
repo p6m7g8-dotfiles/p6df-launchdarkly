@@ -28,20 +28,6 @@ p6df::modules::launchdarkly::external::brews() {
 ######################################################################
 #<
 #
-# Function: p6df::modules::launchdarkly::vscodes()
-#
-#>
-######################################################################
-p6df::modules::launchdarkly::vscodes() {
-
-         p6df::modules::vscode::extension::install LaunchDarklyOfficial.launchdarkly
-
-         p6_return_void
-}
-
-######################################################################
-#<
-#
 # Function: p6df::modules::launchdarkly::mcp()
 #
 #>
@@ -54,6 +40,20 @@ p6df::modules::launchdarkly::mcp() {
   p6df::modules::openai::mcp::server::add "launchdarkly" "npx" "-y" "@launchdarkly/mcp-server"
 
   p6_return_void
+}
+
+######################################################################
+#<
+#
+# Function: p6df::modules::launchdarkly::vscodes()
+#
+#>
+######################################################################
+p6df::modules::launchdarkly::vscodes() {
+
+         p6df::modules::vscode::extension::install LaunchDarklyOfficial.launchdarkly
+
+         p6_return_void
 }
 
 ######################################################################
