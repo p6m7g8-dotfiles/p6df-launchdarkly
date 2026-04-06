@@ -17,8 +17,7 @@
 
 ## Summary
 
-Configure LaunchDarkly profile state for shell usage, install the official `ldcli`,
-and MCP server (`@launchdarkly/mcp-server`) for AI-driven feature flag management.
+TODO: Add a short summary of this module.
 
 ## Contributing
 
@@ -37,19 +36,10 @@ and MCP server (`@launchdarkly/mcp-server`) for AI-driven feature flag managemen
 ##### p6df-launchdarkly/init.zsh
 
 - `p6df::modules::launchdarkly::deps()`
-- `p6df::modules::launchdarkly::external::brew()`
-- `p6df::modules::launchdarkly::init(_module, dir)`
-  - Args:
-    - _module
-    - dir
+- `p6df::modules::launchdarkly::external::brews()`
 - `p6df::modules::launchdarkly::mcp()`
-- `p6df::modules::launchdarkly::profile::off()`
-- `p6df::modules::launchdarkly::profile::on(profile, env)`
-  - Args:
-    - profile
-    - env
 - `p6df::modules::launchdarkly::vscodes()`
-- `str str = p6df::modules::launchdarkly::prompt::mod()`
+- `str str = p6df::modules::launchdarkly::profile::mod()`
 
 #### p6df-launchdarkly/lib
 

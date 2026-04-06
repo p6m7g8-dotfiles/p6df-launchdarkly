@@ -59,12 +59,12 @@ p6df::modules::launchdarkly::vscodes() {
 ######################################################################
 #<
 #
-# Function: words launchdarkly $LAUNCHDARKLY_API_KEY = p6df::modules::launchdarkly::profile::mod()
+# Function: str str = p6df::modules::launchdarkly::profile::mod()
 #
 #  Returns:
-#	words - launchdarkly $LAUNCHDARKLY_API_KEY
+#	str - str
 #
-#  Environment:	 LAUNCHDARKLY_API_KEY
+#  Environment:	 LAUNCHDARKLY_API_KEY LAUNCHDARKLY_SDK_KEY P6_LD_ENV P6_LD_PROJECT
 #>
 ######################################################################
 p6df::modules::launchdarkly::profile::mod() {
